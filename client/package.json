@@ -1,5 +1,5 @@
 {
-  "name": "veggi",
+  "name": "veggie",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,12 +13,19 @@
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "babel-jest": "^24.5.0",
+    "enzyme-to-json": "^3.3.5",
+    "jest": "^24.5.0",
+    "jest-junit": "^6.3.0",
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --watch",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

@@ -25,8 +25,7 @@ class SingleProduct extends Component {
   componentDidMount() {
     const productId = this.props.match.params.productId
     this.props.requestProduct(productId)
-    this.props.requestCart(this.props.user.id)
-    // console.log(this.props.location)
+    this.props.requestCart(this.props.user.id);
   }
 
   validateIfNumber(input) {
@@ -74,6 +73,7 @@ class SingleProduct extends Component {
 
   addToCart(evt) {
     evt.preventDefault()
+    // debugger
     console.log('the props currently on product page', this.props)
     let orderInfo = {
       productId: this.props.match.params.productId,
@@ -83,6 +83,7 @@ class SingleProduct extends Component {
     }
     console.log('order info being sent is ', orderInfo)
     this.props.orderItemInput(orderInfo)
+    // debugger
     let total = evt.target.quantity.value * this.props.product.price
     this.setCheckoutTotal(total, evt.target.quantity.value);
     this.displayPopUp();
@@ -102,7 +103,7 @@ class SingleProduct extends Component {
 
   render() {
     const {product} = this.props
-
+    console.log('##### PROPS ####: ', this.props);
     return (
       <div className="singleproduct-container">
         {this.state.displayPopUp && (
