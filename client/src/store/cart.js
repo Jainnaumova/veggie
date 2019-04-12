@@ -105,7 +105,6 @@ export default function(state = defaultCart, action) {
 // fetch order with state cart (for checkout)
 export const requestOrder = id => async dispatch => {
   try {
-    console.log('id is ', id)
     const res = await axios.get(`/api/users/${id}/cart`)
     dispatch(getCart(res.data))
   } catch (err) {

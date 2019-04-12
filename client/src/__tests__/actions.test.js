@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 import {GET_PRODUCT, GET_PRODUCTS} from '../store/product';
 import {getProduct, getProducts, requestProducts, requestProduct} from '../store/product';
@@ -8,11 +8,11 @@ import {requestOrder, } from '../store/cart';
 
 describe('ProductActions', () => {
 
-  const expectedAll = { type: GET_PRODUCTS, products: [{id: 1}, {id: 2}, {id: 3}] };
+  const expectedAll = { type: 'GET_PRODUCTS', products: [{id: 1}, {id: 2}, {id: 3}] };
   const productsUrl = '/api/products';
 
-  const expectedOne = { type: GET_PRODUCT, selectedProduct: {id: 2} };
-  const productUrl = `/api/products/${id}`
+  const expectedOne = { type: 'GET_PRODUCT', product: {id: 2} };
+  const productUrl = '/api/products/2';
 
 
   it('handles a getProducts action', async () => {
@@ -32,7 +32,7 @@ describe('ProductActions', () => {
 
     axios.get = jest.fn((url) => {
       if (url === productUrl) {
-        return Promise.resolve({ data: expectedOne.selectedProduct})
+        return Promise.resolve({ data: expectedOne.product})
       }
     });
     const dispatch = jest.fn();
@@ -45,8 +45,8 @@ describe('ProductActions', () => {
 
 describe('CartActions', () => {
 
-  const expectedCart = { type: GET_CART, cart: {cartId: 1, where: {userId: id}}}
-  const cartUrl = `/api/users/${id}/cart`
+  const expectedCart = { type: 'GET_CART', cart: {cartId: 1, where: {userId: 2}}}
+  const cartUrl = '/api/users/2/cart'
 
   it('handles a getCart action', async () => {
 
@@ -56,7 +56,7 @@ describe('CartActions', () => {
       }
     });
     const dispatch = jest.fn();
-    await requestOrder(id)(dispatch);
+    await requestOrder(2)(dispatch);
     expect(dispatch.mock.calls.length).toBe(1);
     expect(dispatch.mock.calls[0][0]).toEqual(expectedCart)
   })

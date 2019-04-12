@@ -12,11 +12,19 @@ module.exports = router
  * these secrets that you only share with your team - it should NOT be tracked
  * by git! In this case, you may use a file called `secrets.js`, which will
  * set these environment variables like so:
- *
- * process.env.GOOGLE_CLIENT_ID = 'your google client id'
- * process.env.GOOGLE_CLIENT_SECRET = 'your google client secret'
- * process.env.GOOGLE_CALLBACK = '/your/google/callback'
- */
+ **/
+console.log(process.env.GOOGLE_CLIENT_ID);
+ process.env.GOOGLE_CLIENT_ID = '572751984871-6qem9fttsfajg87nmundla0qoarsejau'
+ process.env.GOOGLE_CLIENT_SECRET = 't4-_dzeUn2FiNC7Fb7_yoPd-'
+ process.env.GOOGLE_CALLBACK = '/auth/google/callback'
+
+ // clientID: process.env.GOOGLE_CLIENT_ID,
+ // clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+ // callbackURL: process.env.GOOGLE_CALLBACK
+
+
+//clientID: 572751984871-6qem9fttsfajg87nmundla0qoarsejau.apps.googleusercontent.com
+// clientSecret: t4-_dzeUn2FiNC7Fb7_yoPd-
 
 if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
   console.log('Google client ID / secret not found. Skipping Google OAuth.')
@@ -26,10 +34,10 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: process.env.GOOGLE_CALLBACK
   }
-
   const strategy = new GoogleStrategy(
     googleConfig,
     (token, refreshToken, profile, done) => {
+      console.log('---', 'in verification callback', profile, '---')
       const googleId = profile.id
       const name = profile.displayName
       const email = profile.emails[0].value
@@ -54,4 +62,18 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
       failureRedirect: '/login'
     })
   )
+
+  passport.serializeUser((user, done) => {
+    done(null, user.id);
+  });
+
+  passport.deserializeUser((id, done) => {
+    User.findByPk(id)
+      .then(user => {
+        done(null, user);
+      })
+      .catch(err => {
+        done(err);
+      });
+  });
 }
