@@ -6,7 +6,6 @@ import {requestProduct} from '../store/product'
 import {orderItemInput, requestCart, setTotal} from '../store/cart'
 
 import '../assets/styles/singleProduct.css'
-// import {runInNewContext} from 'vm'
 
 class SingleProduct extends Component {
   constructor(props) {
