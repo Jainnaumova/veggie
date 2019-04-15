@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllProducts should match the snapshot 1`] = `
+<p>
+  There is currently no produce in the database
+</p>
+`;
