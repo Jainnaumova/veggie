@@ -1,16 +1,9 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {
-  requestCart,
-  requestCheckout,
-  removeItem,
-  setTotalSub
-} from '../store/cart';
 
 import '../assets/styles/cart.css'
 
-class Cart extends Component {
+export default class Cart extends Component {
   constructor() {
     super()
     this.getProductInfo = this.getProductInfo.bind(this)
@@ -85,21 +78,3 @@ class Cart extends Component {
     }
   }
 }
-
-const mapDispatch = dispatch => {
-  return {
-    requestCheckout: id => dispatch(requestCheckout(id)),
-    requestCart: id => dispatch(requestCart(id)),
-    removeItem: info => dispatch(removeItem(info)),
-    setTotalSub: total => dispatch(setTotalSub(total))
-  }
-}
-
-const mapState = state => {
-  return {
-    id: state.user.id,
-    cart: state.cart
-  }
-}
-
-export default connect(mapState, mapDispatch)(Cart)

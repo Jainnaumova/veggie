@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import ProductCart from './ProductCart'
-import {requestProducts} from '../store/product'
 
-class AllProducts extends Component {
+export default class AllProducts extends Component {
 
   componentDidMount() {
     this.props.requestProducts()
@@ -32,17 +30,3 @@ class AllProducts extends Component {
     )
   }
 }
-
-const mapState = state => {
-  return {
-    products: state.product.products
-  }
-}
-
-const mapDispatch = dispatch => {
-  return {
-    requestProducts: () => dispatch(requestProducts())
-  }
-}
-
-export default connect(mapState, mapDispatch)(AllProducts)

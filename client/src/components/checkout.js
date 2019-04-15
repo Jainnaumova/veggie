@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 import axios from 'axios'
 
-import {requestOrder, recieveEmptyCart} from '../store/cart'
 import '../assets/styles/checkout.css'
 
 const encriptCardNumber = cardNum => {
@@ -18,7 +16,7 @@ const encriptCardNumber = cardNum => {
   )
 }
 
-class Checkout extends Component {
+export default class Checkout extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -141,15 +139,3 @@ class Checkout extends Component {
     )
   }
 }
-
-const mapState = state => ({
-  cart: state.cart,
-  user: state.user
-})
-
-const mapDispatch = dispatch => ({
-  requestOrder: id => dispatch(requestOrder(id)),
-  recieveEmptyCart: () => dispatch(recieveEmptyCart())
-})
-
-export default connect(mapState, mapDispatch)(Checkout)

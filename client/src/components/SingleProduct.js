@@ -1,13 +1,9 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-
-import {requestProduct} from '../store/product'
-import {orderItemInput, requestCart, setTotal} from '../store/cart'
 
 import '../assets/styles/singleProduct.css'
 
-class SingleProduct extends Component {
+export default class SingleProduct extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -174,18 +170,3 @@ class SingleProduct extends Component {
     )
   }
 }
-
-const mapStateToProps = state => ({
-  product: state.product.selectedProduct,
-  user: state.user,
-  cart: state.cart
-})
-
-const mapDispatchToProps = dispatch => ({
-  requestProduct: productId => dispatch(requestProduct(productId)),
-  orderItemInput: orderInfo => dispatch(orderItemInput(orderInfo)),
-  requestCart: id => dispatch(requestCart(id)),
-  setTotal: total => dispatch(setTotal(total))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(SingleProduct)
