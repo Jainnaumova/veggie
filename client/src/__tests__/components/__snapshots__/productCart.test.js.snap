@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCart should match the snapshot 1`] = `
+<div>
+  <div
+    className="productName"
+  >
+    <h3>
+      Broccoli
+    </h3>
+  </div>
+  <img
+    alt="product"
+    className="productImg"
+    src="https://www.producemarketguide.com/sites/default/files/Commodities.tar/Commodities/broccoli_commodity-page.png"
+  />
+</div>
+`;

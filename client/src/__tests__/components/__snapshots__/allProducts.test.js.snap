@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllProducts should match the snapshot 1`] = `
+<div
+  className="containerDiv"
+>
+  <h1>
+    All Produce
+  </h1>
+  <div
+    className="allProducts"
+  >
+    <div
+      className="products"
+    >
+      <div>
+        <a
+          href="/products/undefined"
+          onClick={[Function]}
+        >
+          <ProductCart
+            product={
+              Object {
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam molestie nisl id egestas dignissim. Nullam turpis lorem, malesuada vitae fringilla a, pharetra maximus nibh. Sed id lectus ac mauris venenatis vulputate in nec erat. Pellentesque fringilla, ligula congue tempus molestie, ipsum nisl rhoncus ante, a sagittis sapien urna efficitur lectus. Vestibulum sollicitudin pharetra elit, a bibendum nibh feugiat id. Praesent efficitur, lorem non aliquet varius, tellus velit efficitur massa, et aliquam mi tortor at massa. Integer quis lacus ac risus hendrerit laoreet. Sed eu mauris pellentesque, pulvinar eros nec, viverra nulla. Vestibulum a ultricies ex. Integer bibendum ac enim non aliquet. Pellentesque aliquam ante vitae interdum eleifend.",
+                "imageUrl": "https://www.producemarketguide.com/sites/default/files/Commodities.tar/Commodities/broccoli_commodity-page.png",
+                "inventory": 8,
+                "name": "Broccoli",
+                "price": 799,
+                "tags": Array [
+                  "vegetable",
+                ],
+              }
+            }
+          />
+        </a>
+      </div>
+      <div>
+        <a
+          href="/products/undefined"
+          onClick={[Function]}
+        >
+          <ProductCart
+            product={
+              Object {
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam molestie nisl id egestas dignissim. Nullam turpis lorem, malesuada vitae fringilla a, pharetra maximus nibh. Sed id lectus ac mauris venenatis vulputate in nec erat. Pellentesque fringilla, ligula congue tempus molestie, ipsum nisl rhoncus ante, a sagittis sapien urna efficitur lectus. Vestibulum sollicitudin pharetra elit, a bibendum nibh feugiat id. Praesent efficitur, lorem non aliquet varius, tellus velit efficitur massa, et aliquam mi tortor at massa. Integer quis lacus ac risus hendrerit laoreet. Sed eu mauris pellentesque, pulvinar eros nec, viverra nulla. Vestibulum a ultricies ex. Integer bibendum ac enim non aliquet. Pellentesque aliquam ante vitae interdum eleifend.",
+                "imageUrl": "https://purepng.com/public/uploads/large/purepng.com-carrotscarrotvegetablesfreshdeliciousefoodhealthycarrots-481521740717jmglq.png",
+                "inventory": 6,
+                "name": "Carrot",
+                "price": 269,
+                "tags": Array [
+                  "vegetable",
+                ],
+              }
+            }
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
