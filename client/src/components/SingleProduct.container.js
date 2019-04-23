@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => ({
   setTotal: total => dispatch(setTotal(total))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(SingleProduct)
+export default connect(mapStateToProps, mapDispatchToProps)(SingleProduct);
