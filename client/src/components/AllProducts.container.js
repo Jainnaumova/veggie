@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 
 import AllProducts from './AllProducts';
 
-import {requestProducts} from '../store/product'
+import { requestProducts } from '../store/product'
 
 const mapState = state => ({
   products: state.product.products

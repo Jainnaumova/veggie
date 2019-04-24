@@ -4,7 +4,7 @@ import Cart from './Cart';
 
 import {
   requestCart,
-  requestCheckout,
+  // requestCheckout,
   removeItem,
   setTotalSub
 } from '../store/cart';
@@ -15,7 +15,7 @@ const mapState = state => ({
 })
 
 const mapDispatch = dispatch => ({
-  requestCheckout: id => dispatch(requestCheckout(id)),
+  // requestCheckout: id => dispatch(requestCheckout(id)),
   requestCart: id => dispatch(requestCart(id)),
   removeItem: info => dispatch(removeItem(info)),
   setTotalSub: total => dispatch(setTotalSub(total))

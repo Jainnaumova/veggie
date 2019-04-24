@@ -8,5 +8,5 @@ export {default as SingleProduct} from './SingleProduct.container';
 export {default as AllProducts} from './AllProducts.container';
 export {default as UserHome} from './UserHome';
 export {Login, Signup} from './AuthForm';
-export {default as Cart} from './Cart.container';
+export {default as CartContainer} from './Cart.container';
 export {default as Checkout} from './Checkout.container';

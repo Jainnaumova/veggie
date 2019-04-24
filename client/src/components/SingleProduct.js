@@ -98,7 +98,7 @@ export default class SingleProduct extends Component {
 
   render() {
     const {product} = this.props
-    console.log('##### PROPS ####: ', this.props);
+    // console.log('##### PROPS ####: ', this.props);
     return (
       <div className="singleproduct-container">
         {this.state.displayPopUp && (
