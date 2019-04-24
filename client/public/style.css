@@ -98,7 +98,13 @@ label {
 /* AllProductsStyling */
 
 .productImg {
-  width: 20vw;
+  width: 24vw;
+  height: 20vw;
+}
+
+.producCart {
+  width: 35em;
+  height: 30em;
 }
 
 .allProducts {

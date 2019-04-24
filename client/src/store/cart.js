@@ -52,14 +52,14 @@ export const requestCart = id => async dispatch => {
   // }
 }
 
-export const requestCheckout = orderId => async dispatch => {
-  try {
-    const res = await axios.post('/api/users/checkout', {orderId})
-    dispatch(getCart(res.data))
-  } catch (err) {
-    console.error(err)
-  }
-}
+// export const requestCheckout = orderId => async dispatch => {
+//   try {
+//     const res = await axios.post('/api/users/checkout', {orderId})
+//     dispatch(getCart(res.data))
+//   } catch (err) {
+//     console.error(err)
+//   }
+// }
 
 export const setTotal = info => async dispatch => {
   try {

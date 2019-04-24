@@ -1,5 +1,6 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import CheckoutButton from './CheckoutButton';
 
 import '../assets/styles/cart.css'
 
@@ -34,6 +35,7 @@ export default class Cart extends Component {
   }
 
   render() {
+    // console.log('userId', this.props.id);
     let total = 0
     let items = this.props.cart.orderItems || []
     if (this.props.cart.currentOrder) {
@@ -68,7 +70,7 @@ export default class Cart extends Component {
           <div className="total-cart">
             <h2>Total: ${total / 100}</h2>
             <Link to="/checkout">
-              <button className={total === 0 ? 'button-add button-disable' : 'button-add'} type="button" disabled={total === 0}>Checkout</button>
+              <CheckoutButton total={total}/>
             </Link>
           </div>
         </div>
@@ -78,3 +80,5 @@ export default class Cart extends Component {
     }
   }
 }
+
+// <button className={total === 0 ? 'button-add button-disable' : 'button-add'} type="button" disabled={total === 0}>Checkout</button>
